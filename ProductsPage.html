@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <link rel="stylesheet" href="ProductsPage.css">
+</head>
+<body>
+
+    <!-- Header Start -->
+    <div class="header">
+        <nav>
+            <div class="content">
+                <div class="logo"><a href="index.html"> <h1> Mirror </h1></a></div>
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="ProductsPage.html">Products</a></li>
+                    <li><a href="index.html#footer">Contact</a></li>
+                    <li><a href="index.html#review">Reviews</a></li>
+                    <li><a href="sell.html">Sell</a></li>
+                    <li><a href="register.html">Sign up</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- Header End -->
+
+    <div class="container">
+        <div class="search-section">
+            <h2>Search Products</h2>
+            <form class="search-form" onsubmit="return searchProducts(event)">
+                <input type="text" id="searchInput" placeholder="Search products..." required>
+                <button type="submit">Search</button>
+            </form>
+            <div id="noResults" class="no-results" style="display: none;">No products found.</div>
+        </div>
+
+        <div class="products" id="productList">
+            <!--Product1-->
+            <div class="product-card" data-name="Elegant Beveled Led Square Mirror">
+                <a href="SinglProduct1.html">
+                    <img src="mirror1.jpg" alt="Product 1">
+                    <div class="product-name">Elegant Beveled Led Square Mirror</div>
+                    <div class="product-rating">★★★★☆</div>
+                    <div class="price">1,399<sup>99 L.E</sup></div>
+                </a>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!--Product2-->
+            <div class="product-card" data-name="Modern Half Moon Led Mirror for Bathroom">
+                <a href="SinglProduct2.html">
+                    <img src="mirror2.jpg" alt="Product 2">
+                    <div class="product-name">Modern Half Moon Led Mirror for Bathroom</div>
+                    <div class="product-rating">★★★☆☆</div>
+                    <div class="price">1,599<sup>99 L.E</sup></div>
+                </a>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!--Product3-->
+            <div class="product-card" data-name="Wave of Elegance: Unique Wavy Led Mirror">
+                <a href="SinglProduct3.html">
+                    <img src="mirror3.jpg" alt="Product 3">
+                    <div class="product-name">Wave of Elegance: Unique Wavy Led Mirror</div>
+                    <div class="product-rating">★★★★★</div>
+                    <div class="price">1,949<sup>99 L.E</sup></div>
+                </a>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!--Product4-->
+            <div class="product-card" data-name="Chic Geometry: Square Mirror with Curved Detail">
+                <a href="SinglProduct4.html">
+                    <img src="mirror4.jpg" alt="Product 4">
+                    <div class="product-name">Chic Geometry: Square Mirror with Curved Detail</div>
+                    <div class="product-rating">★★★☆☆</div>
+                    <div class="price">1,799<sup>99 L.E</sup></div>
+                </a>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <!--Product5-->
+            <div class="product-card" data-name="Round Mirror">
+                <a href="SinglProduct5.html">
+                    <img src="1.jpg" alt="Product 5">
+                    <div class="product-name">Round Mirror</div>
+                    <div class="product-rating">★★☆☆☆</div>
+                    <div class="price">1,399<sup>99 L.E</sup></div>
+                </a>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function searchProducts(event) {
+            event.preventDefault(); // Prevent form submission
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const productCards = document.querySelectorAll('.product-card');
+            let found = false; // Variable to track if any product is found
+
+            productCards.forEach(card => {
+                const productName = card.getAttribute('data-name').toLowerCase();
+                if (productName.includes(input)) {
+                    card.style.display = ''; // Show card
+                    found = true; // Mark that at least one product is found
+                } else {
+                    card.style.display = 'none'; // Hide card
+                }
+            });
+
+            // Show or hide the no results message
+            const noResultsMessage = document.getElementById('noResults');
+            noResultsMessage.style.display = found ? 'none' : 'block';
+        }
+    </script>
+
+</body>
+</html>

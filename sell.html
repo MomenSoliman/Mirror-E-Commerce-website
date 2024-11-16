@@ -1,0 +1,56 @@
+<!-- sell.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sell Your Product</title>
+    <!-- Correct link to the external CSS file -->
+    <link rel="stylesheet" href="sellStyle.css">
+</head>
+<body>
+
+    <!-- Header Start -->
+    <div class="header">
+        <nav>
+            <div class="content">
+                <div class="logo"><a href="index.html"> <h1> Mirror </h1></a></div>
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="ProductsPage.html">Products</a></li>
+                    <li><a href="index.html#footer">Contact</a></li>
+                    <li><a href="index.html#review">Reviews</a></li>
+                    <li><a href="sell.html">Sell</a></li>
+                    <li><a href="register.html">Sign up</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- Header End -->
+     
+    <div class="container">
+        <h1>Sell Your Product</h1>
+        
+        <form action="submit-sell.php" method="POST" enctype="multipart/form-data">
+            <!-- File upload input -->
+            <div class="form-group">
+                <label for="image">Upload Photo</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+            </div>
+            
+            <!-- Textarea for product description -->
+            <div class="form-group">
+                <label for="description">Product Description</label>
+                <textarea id="description" name="description" placeholder="Enter a description of your product..." required></textarea>
+            </div>
+            
+            <!-- Submit button -->
+            <div class="form-group">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
